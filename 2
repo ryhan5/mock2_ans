@@ -1,0 +1,76 @@
+<form id="myForm" onsubmit="validateForm(event)">
+  <label for="name">Name:</label>
+  <br>
+  <input type="text" id="name" required>
+  <br>
+  
+  <label for="email">Email:</label>
+  <br>
+  <input type="email" id="email" required>
+  <br>
+  
+  <label for="phone">Phone Number:</label>
+  <br>
+  <input type="tel" id="phone" pattern="[0-9]{10}" required>
+  <br>
+  
+  <label for="password">Password:</label>
+  <br>
+  <input type="password" id="password" required>
+  <br>
+  
+  <label for="age">Age:</label>
+  <br>
+  <input type="number" id="age" min="18" max="100" required>
+  <br>
+  
+  <label for="gender">Gender:</label>
+  <br>
+  <select id="gender" required>
+    <option value="">Select</option>
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+    <option value="other">Other</option>
+  </select>
+  <br>
+  
+  <label for="date">Date:</label>
+  <br>
+  <input type="date" id="date" required>
+  <br>
+  
+  <label for="color">Color:</label>
+  <br>
+  <input type="color" id="color" required>
+  <br>
+  
+  <button type="submit">Submit</button>
+</form>
+
+<script>
+function validateForm(event) {
+  event.preventDefault(); // Prevent form submission
+  
+  // Retrieve form field values
+  var name = document.getElementById('name').value;
+  var email = document.getElementById('email').value;
+  var phone = document.getElementById('phone').value;
+  var password = document.getElementById('password').value;
+  var age = document.getElementById('age').value;
+  var gender = document.getElementById('gender').value;
+  var date = document.getElementById('date').value;
+  var color = document.getElementById('color').value;
+  
+  // Perform validation checks
+  if (!name || !email || !phone || !password || !age || !gender || !date || !color) {
+    alert("Please fill in all fields.");
+    return;
+  }
+  
+  // Additional validation checks can be performed here
+  
+  // If all validation checks pass, proceed with form submission
+  alert("Form submitted successfully!");
+  document.getElementById('myForm').reset(); // Reset form fields
+}
+</script>
