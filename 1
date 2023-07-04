@@ -1,0 +1,60 @@
+Smoe CSS positions are:
+1. Static:
+The `position: static` is the default position value for elements. It means that the element is positioned according to the normal flow of the document. Elements with a static position are not affected by the `top`, `bottom`, `left`, or `right` properties.
+
+html
+<div class="static-position">Static Position</div>
+css
+.static-position {
+  position: static;
+  }
+
+2. Fixed:
+The `position: fixed` property positions an element relative to the browser window, regardless of scrolling. The element remains fixed in its position even when the page is scrolled.
+
+html
+<div class="fixed-position">Fixed Position</div>
+css
+.fixed-position {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+
+3. Sticky:
+The `position: sticky` property is used to position an element based on the user's scroll position. It acts like a combination of `relative` and `fixed` positions. The element is initially positioned according to the normal flow of the document, but it becomes fixed (stuck) to the viewport when a specified threshold (usually a certain scroll position) is reached.
+
+html
+<div class="sticky-position">Sticky Position</div>
+css
+.sticky-position {
+  position: sticky;
+  top: 20px;
+}
+
+4. Relative:
+The `position: relative` property positions an element relative to its normal position in the document flow. It allows you to adjust the element's position using the `top`, `bottom`, `left`, or `right` properties.
+
+html
+<div class="relative-position">Relative Position</div>
+css
+.relative-position {
+  position: relative;
+  top: 20px;
+  left: 20px;
+}
+
+
+5. Absolute:
+The `position: absolute` property positions an element relative to its nearest positioned ancestor or the initial containing block if no ancestor has a positioned value other than `static`. The element is taken out of the normal document flow, and its position is determined by the `top`, `bottom`, `left`, or `right` properties.
+
+html
+<div class="absolute-position">Absolute Position</div>
+css
+.absolute-position {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
