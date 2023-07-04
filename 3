@@ -1,0 +1,58 @@
+Execution context in JavaScript refers to the environment in which JavaScript code is executed. It consists of various components that define the scope, variables, and the order in which code is executed. Understanding execution context is crucial for understanding how JavaScript code runs and how variables and functions are accessed.
+
+There are three types of execution contexts in JavaScript:
+
+1. Global Execution Context:
+   - The global execution context is created when the JavaScript engine starts running your code.
+   - It represents the default and outermost execution context.
+   - Variables and functions defined in the global scope are accessible throughout the code.
+   - In a browser environment, the global execution context represents the `window` object.
+
+2. Function Execution Context:
+   - Whenever a function is invoked, a new function execution context is created.
+   - It represents the local scope of the function.
+   - Each function has its own execution context with its own set of variables.
+   - When a function is invoked, a new function execution context is pushed onto the execution stack.
+   - When the function finishes executing, its execution context is removed from the stack, and control goes back to the calling context.
+
+3. Eval Execution Context (not commonly used):
+   - The eval function in JavaScript can create a new execution context, known as the eval execution context.
+   - It represents the execution context for code evaluated using the `eval()` function.
+
+Here's a diagram to illustrate the concept of execution contexts:
+
+```
++--------------------------------------------------+
+|                     Global                       |
+|--------------------------------------------------|
+|    Variables    |    Functions    |    this       |
+|--------------------------------------------------|
+|                                                |
+|                                                |
+|           Global Scope (window object)          |
+|                                                |
+|                                                |
++--------------------------------------------------+
+
+   Execution Stack
++--------------------------------------------------+
+|                 Function Execution                |
+|--------------------------------------------------|
+|    Variables    |    Functions    |    this       |
+|--------------------------------------------------|
+|                                                |
+|                                                |
+|          Function Scope (local variables)        |
+|                                                |
+|                                                |
++--------------------------------------------------+
+```
+
+In the diagram:
+- The top represents the global execution context, which includes the global scope (window object) and associated variables and functions.
+- The bottom represents a function execution context, which includes the function's local scope and associated variables and functions.
+- The execution stack represents the order in which execution contexts are pushed and popped as functions are invoked and completed.
+
+As the code runs, execution contexts are created and added to the execution stack. When a function is called, a new function execution context is pushed onto the stack, and when a function completes, its execution context is popped off the stack.
+
+Each execution context has its own set of variables, and the JavaScript engine determines the scope and access to variables based on the execution context.
